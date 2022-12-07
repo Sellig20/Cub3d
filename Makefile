@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+         #
+#    By: jeannecolmou <jeannecolmou@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 14:52:30 by jecolmou          #+#    #+#              #
-#    Updated: 2022/12/06 15:59:21 by jecolmou         ###   ########.fr        #
+#    Updated: 2022/12/07 19:37:34 by jeannecolmo      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,36 +17,33 @@ SRC					=		cub3d.c \
 							utils/ft_strcmp.c \
 							utils/ft_bzero.c \
 							utils/ft_split.c \
+							utils/ft_putstr_fd.c \
+							utils/ft_strlen.c \
 							get_next_line/get_next_line.c \
 							get_next_line/get_next_line_utils.c \
+							free.c \
+							parsing.c \
+							open_file.c \
 
 NAME = cub3d
-
-MLX = ./mlx/libmlx.a
 
 CC = clang
 
 LINK = clang
 
-CFLAGS = -Wall -Wextra -Werror -Imlx -I. -c -g3
+CFLAGS = -Wall -Wextra -Werror -I. -c -g3
 
 OBJ = $(SRC:.c=.o)
-
-LFLAGS	=	-ldl -lmlx -Lmlx -lm -lXext -lX11 -Lmlx -lmlx
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(MLX)
 	$(LINK) $(OBJ) $(LFLAGS) $(OUTPUT_OPTION)
 
-$(MLX) :
-	$(MAKE) -C ./mlx
-
 %.o: %.c
 	${CC} ${CFLAGS} $< $(OUTPUT_OPTION)
 
 clean:
-	$(MAKE) $@ -C ./mlx
 	rm -f $(OBJ)
 
 fclean: clean

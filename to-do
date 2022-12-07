@@ -1,0 +1,3 @@
+- faire tourner un gnl, le clos ele free pour compter le no;bre de ligne
+- changer le malloc de map par le bon nbre de lignes
+- empty_map dans open map a implemtey

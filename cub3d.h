@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeannecolmou <jeannecolmou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:49:46 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/06 18:05:27 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:36:12 by jeannecolmo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <stdbool.h>
-# include "mlx/mlx.h"
-# include <X11/keysym.h>
-# include <X11/X.h>
+//# include "mlx/mlx.h"
+//# include <X11/keysym.h>
+//# include <X11/X.h>
 
 typedef struct s_data		t_data;
 
@@ -59,5 +59,20 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strcmp(char *s1, char *s2);
 void	ft_bzero(void *s, size_t n);
 char	**ft_split(char const *s, char c);
+void	ft_putstr_fd(char *str, int fd);
+int		ft_strlen(char *str);
+
+//////////FREE///////////////////
+void	ft_free_args(char **args);
+
+////////////////PARSING///////////
+//parsing
+int		ft_check_argv(int argc, char **argv);
+void	ft_map_space_a(char **map, t_data *x);
+int		ft_count_line(t_data *x);
+//open file
+int		ft_open_file(char **argv, t_data *x);
+int		ft_empty_map(t_data *x);
+int		ft_open_map(char **argv, t_data *x);
 
 #endif
