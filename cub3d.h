@@ -6,7 +6,7 @@
 /*   By: jeannecolmou <jeannecolmou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:49:46 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/07 19:36:12 by jeannecolmo      ###   ########.fr       */
+/*   Updated: 2022/12/08 19:25:42 by jeannecolmo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	ft_bzero(void *s, size_t n);
 char	**ft_split(char const *s, char c);
 void	ft_putstr_fd(char *str, int fd);
 int		ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
 
 //////////FREE///////////////////
 void	ft_free_args(char **args);
@@ -69,7 +70,7 @@ void	ft_free_args(char **args);
 //parsing
 int		ft_check_argv(int argc, char **argv);
 void	ft_map_space_a(char **map, t_data *x);
-int		ft_count_line(t_data *x);
+int		ft_count_line(char **argv, t_data *x);
 //open file
 int		ft_open_file(char **argv, t_data *x);
 int		ft_empty_map(t_data *x);

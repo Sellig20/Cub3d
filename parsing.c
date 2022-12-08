@@ -48,26 +48,3 @@ void	ft_map_space_a(char **map, t_data *x)
 		p++;
 	}
 }
-
-int	ft_count_line(t_data *x)
-{
-	char	*str;
-	int		count;
-
-	count = 0;
-	str = get_next_line(x->file, 0);
-	if (!str)
-		return (ft_empty_map(x));
-	while (str)
-	{
-		str = get_next_line(x->file, 0);
-		if (str == NULL)
-		{
-			free(str);
-			get_next_line(x->file, 1);
-		}
-		count++;
-	}
-	free(str);
-	return (count);
-}

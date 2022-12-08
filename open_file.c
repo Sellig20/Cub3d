@@ -29,32 +29,59 @@ int	ft_empty_map(t_data *x)
 int	ft_open_map(char **argv, t_data *x)
 {
 	char	*str;
-	char	**map;
+	char	*join;
+	char	**split;
 	int k;
 	
 	k = 0;
 	if (ft_open_file(argv, x) == 1)
 		return (1);
-	x->count = 0;
+	
 	str = get_next_line(x->file, 0);
 	if (!str)
 		return (ft_empty_map(x));
 	x->len = ft_strlen(str);
-	map = malloc(sizeof(char *) * 1000 + 1);
-	ft_bzero(map, sizeof(map));
+	join = NULL;
 	while (str)
 	{
-		map[k] = str;
-		k++;
 		x->tmp_len = ft_strlen(str);
 		if (x->tmp_len > x->len)
 			x->len = x->tmp_len;
+		join = ft_strjoin(join, str);
 		str = get_next_line(x->file, 0);
-		x->count++;
 	}
 	get_next_line(x->file, 1);
 	free(str);
-	ft_map_space_a(map, x);
-	ft_free_args(map);
+	int y = -1;
+	int len = 0;
+	int o = 0;
+	int f = 0;
+	while(join[++y])
+		split = ft_split(join, '\n');
+	while (split[o])
+	{
+		f = 0;
+		len = ft_strlen(split[o]);
+		dprintf(2, "join ==> %s\n", split[o]);
+		while (split[o][f])
+		{
+			if (split[o][f] == ' ')
+				split[o][f] = 'A';
+			if (split[o][f] == 'A')
+				dprintf(2, "+++ : ESPACE\n");
+			else
+				dprintf(2, "+++ : %c\n", split[o][f]);
+			if ((f + 1 == len) && len < x->len)
+			{
+				while (len <= x->len)
+				{
+					dprintf(2, "+++ : ESPACE FIN\n");
+					len++;
+				}
+			}
+			f++;
+		}
+		o++;
+	}
 	return (0);
 }

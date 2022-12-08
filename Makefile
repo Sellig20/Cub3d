@@ -6,7 +6,7 @@
 #    By: jeannecolmou <jeannecolmou@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 14:52:30 by jecolmou          #+#    #+#              #
-#    Updated: 2022/12/07 19:37:34 by jeannecolmo      ###   ########.fr        #
+#    Updated: 2022/12/08 19:21:26 by jeannecolmo      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC					=		cub3d.c \
 							utils/ft_split.c \
 							utils/ft_putstr_fd.c \
 							utils/ft_strlen.c \
+							utils/ft_strjoin.c \
 							get_next_line/get_next_line.c \
 							get_next_line/get_next_line_utils.c \
 							free.c \
