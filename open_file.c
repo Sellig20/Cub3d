@@ -26,17 +26,23 @@ int	ft_empty_map(t_data *x)
 	return (get_next_line(x->file, 1), 0);
 }
 
+void	ft_map_split(char *join, t_data *x)
+{
+	char	**split;
+	int 	y;
+
+	y = -1;
+	while(join[++y])
+		split = ft_split(join, '\n', x);
+	ft_map_space_change(split, x);
+}
+
 int	ft_open_map(char **argv, t_data *x)
 {
 	char	*str;
 	char	*join;
-	char	**split;
-	int k;
-	
-	k = 0;
 	if (ft_open_file(argv, x) == 1)
 		return (1);
-	
 	str = get_next_line(x->file, 0);
 	if (!str)
 		return (ft_empty_map(x));
@@ -52,36 +58,6 @@ int	ft_open_map(char **argv, t_data *x)
 	}
 	get_next_line(x->file, 1);
 	free(str);
-	int y = -1;
-	int len = 0;
-	int o = 0;
-	int f = 0;
-	while(join[++y])
-		split = ft_split(join, '\n');
-	while (split[o])
-	{
-		f = 0;
-		len = ft_strlen(split[o]);
-		dprintf(2, "join ==> %s\n", split[o]);
-		while (split[o][f])
-		{
-			if (split[o][f] == ' ')
-				split[o][f] = 'A';
-			if (split[o][f] == 'A')
-				dprintf(2, "+++ : ESPACE\n");
-			else
-				dprintf(2, "+++ : %c\n", split[o][f]);
-			if ((f + 1 == len) && len < x->len)
-			{
-				while (len <= x->len)
-				{
-					dprintf(2, "+++ : ESPACE FIN\n");
-					len++;
-				}
-			}
-			f++;
-		}
-		o++;
-	}
+	ft_map_split(join, x);
 	return (0);
 }

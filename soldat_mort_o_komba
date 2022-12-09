@@ -1,0 +1,35 @@
+// void	ft_map_space_a(char **map, t_data *x)
+// {
+// 	(void)x;
+// 	int p;
+// 	int y;
+// 	int fou;
+    
+// 	p = 0;
+//     fou = 0;
+// 	while (map[p])
+// 	{
+// 		y = 0;
+// 		dprintf(2, "----------> %s", map[p]);
+// 		fou = ft_strlen(map[p]);
+// 		while (map[p][y])
+// 		{
+// 			if (map[p][y] == ' ')
+// 				map[p][y] = 'A';
+// 			if (map[p][y] == 'A')
+// 				dprintf(2, "+++ : ESPACE\n");
+// 			else if (map[p][y] != '\n')
+// 				dprintf(2, "+++ : %c\n", map[p][y]);
+// 			if (map[p][y] == '\n' && ((y + 1) == fou) && fou < x->len)
+// 			{
+// 				while (fou <= x->len)
+// 				{
+// 					dprintf(2, "+++ : ESPACE FIN\n");
+// 					fou++;
+// 				}
+// 			}
+// 			y++;
+// 		}
+// 		p++;
+// 	}
+// }

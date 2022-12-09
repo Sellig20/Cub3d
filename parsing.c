@@ -13,38 +13,42 @@ int	ft_check_argv(int argc, char **argv)
 	return (0);
 }
 
-void	ft_map_space_a(char **map, t_data *x)
+void	ft_map_space_change(char **map, t_data *x)
 {
-	(void)x;
-	int p;
-	int y;
-	int fou;
-    
-	p = 0;
-    fou = 0;
-	while (map[p])
+	int len;
+	int f;
+	int o;
+
+	len = 0;
+	f = 0;
+	o = 0;
+	while (map[o])
 	{
-		y = 0;
-		dprintf(2, "----------> %s", map[p]);
-		fou = ft_strlen(map[p]);
-		while (map[p][y])
+		f = 0;
+		len = ft_strlen(map[o]);
+		while (map[o][f])
 		{
-			if (map[p][y] == ' ')
-				map[p][y] = 'A';
-			if (map[p][y] == 'A')
-				dprintf(2, "+++ : ESPACE\n");
-			else if (map[p][y] != '\n')
-				dprintf(2, "+++ : %c\n", map[p][y]);
-			if (map[p][y] == '\n' && ((y + 1) == fou) && fou < x->len)
+			if (map[o][f] == ' ')
+				map[o][f] = 'A';
+			// if (map[o][f] == 'A')
+			// 	dprintf(2, "+++ : ESPACE\n");
+			// else
+			// 	dprintf(2, "+++ : %c\n", map[o][f]);
+			if ((f + 1 == len) && len < x->len)
 			{
-				while (fou <= x->len)
+				f++;
+				while (len < x->len)
 				{
-					dprintf(2, "+++ : ESPACE FIN\n");
-					fou++;
+					map[o][f] = 'A';
+					f++;
+					// if (map[o][f] == 'A')
+					// 	dprintf(2, "+++ : ESPACE FIN\n");
+					len++;
 				}
 			}
-			y++;
+			f++;
 		}
-		p++;
+		dprintf(2, "join ==> %s\n", map[o]);
+		o++;
 	}
 }

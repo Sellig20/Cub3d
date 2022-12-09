@@ -3,31 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeannecolmou <jeannecolmou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 15:32:50 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/06 15:59:43 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/09 20:52:23 by jeannecolmo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-static int	ft_word_len(char const *s, char c)
-{
-	int	len;
-	int	i;
-
-	i = 0;
-	len = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i] && s[i] != c)
-	{
-		i++;
-		len++;
-	}
-	return (len);
-}
 
 static int	ft_count_word(char const *s, char c)
 {
@@ -63,7 +46,7 @@ char	**free_split(char **str, int count)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c, t_data *x)
 {
 	char	**tab;
 	int		i;
@@ -78,7 +61,7 @@ char	**ft_split(char const *s, char c)
 	while (++i < ft_count_word(s, c))
 	{
 		j = 0;
-		tab[i] = malloc((ft_word_len(&s[k], c) + 1) * sizeof(char));
+		tab[i] = malloc((x->len + 1) * sizeof(char));
 		if (tab[i] == NULL)
 			free_split(tab, i);
 		while (s[k] == c && s[k])
