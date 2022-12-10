@@ -20,7 +20,6 @@ void	ft_map_space_change(char **map, t_data *x)
 	int o;
 
 	len = 0;
-	f = 0;
 	o = 0;
 	while (map[o])
 	{
@@ -39,7 +38,7 @@ void	ft_map_space_change(char **map, t_data *x)
 				f++;
 				while (len < x->len)
 				{
-					map[o][f] = 'A';
+					map[o][f] = 'B';
 					f++;
 					// if (map[o][f] == 'A')
 					// 	dprintf(2, "+++ : ESPACE FIN\n");
