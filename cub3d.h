@@ -34,6 +34,7 @@ struct	s_data
 	int len;
 	int tmp_len;
 	int	count;
+	int max;
 };
 
 typedef struct s_map		t_map;
@@ -71,6 +72,15 @@ void	ft_free_args(char **args);
 int		ft_check_argv(int argc, char **argv);
 void	ft_map_space_change(char **map, t_data *x);
 int		ft_count_line(char **argv, t_data *x);
+//parsing_lines
+int		ft_parse_map_fl_lines(char **map, t_data *x);
+int		ft_parse_map_line2(char **map, t_data *x);
+int		ft_parse_map_line1(char **map, t_data *x);
+//parsing_cases.c
+int		ft_parse_map_first_case(char **map, t_data *x);
+int		ft_parse_map_last_case(char **map, t_data *x);
+int		ft_parse_map_letter1(char **map, t_data *x);
+int		ft_parse_map_letter2(char **map, t_data *x);
 //open file
 int		ft_open_file(char **argv, t_data *x);
 int		ft_empty_map(t_data *x);

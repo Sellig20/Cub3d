@@ -36,7 +36,7 @@ void	ft_map_space_change(char **map, t_data *x)
 			if ((f + 1 == len) && len < x->len)
 			{
 				f++;
-				while (len < x->len)
+				while (len < x->len - 1)
 				{
 					map[o][f] = 'B';
 					f++;
@@ -47,7 +47,9 @@ void	ft_map_space_change(char **map, t_data *x)
 			}
 			f++;
 		}
-		dprintf(2, "join ==> %s\n", map[o]);
+		//dprintf(2, "join ==> %s\n", map[o]);
 		o++;
 	}
 }
+
+

@@ -24,6 +24,8 @@ SRC					=		cub3d.c \
 							get_next_line/get_next_line_utils.c \
 							free.c \
 							parsing.c \
+							parsing_lines.c \
+							parsing_cases.c \
 							open_file.c \
 
 NAME = cub3d

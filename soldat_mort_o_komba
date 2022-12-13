@@ -33,3 +33,29 @@
 // 		p++;
 // 	}
 // }
+
+//int ft_check_b(char **map, int i, int j, int count1, int len)
+// {
+// 	//i++;
+// 	(void)j;
+// 	(void)count1;
+// 	(void)map;
+// 	int count2 = 0;
+// 	(void)len;
+// 	//dprintf(2, "len -> %d\n", len);
+// 	j = 0;
+// 	while (map[i] && map[i][j])
+// 	{
+// 		if (map[i][j] == 'B')
+// 			count2++;
+// 		//if (map[i][j] == 'B')
+// 		j++;
+// 	}
+// 	if ((count2 != count1) && ((map[i][j] == 'B' || map[i][j] == '1')))
+// 	{
+// 		dprintf(2, "[[[[[ probleme ? \n map[i] = %s\n map[i][j] = %c", map[i], map[i][j]);
+// 		return (1);
+// 	}
+// 	dprintf(2, "count 1 = %d | count 2 = %d\n", count1, count2);
+// 	return (0);
+// }
