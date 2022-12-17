@@ -6,7 +6,7 @@ int	ft_parse_map_fl_lines(char **map, t_data *x)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 6;
 	j = 0;
 	(void)x;
 	while (map[0][j])
@@ -33,7 +33,7 @@ int	ft_parse_map_line1(char **map, t_data *x)
 	int count2;
 	(void)x;
 
-	i = 0;
+	i = 6;
 	count2 = 0;
 	while (map[i])
 	{
@@ -72,7 +72,7 @@ int	ft_parse_map_line2(char **map, t_data *x)
 	
 	len = 0;
 	diff = 0;
-	i = 0;
+	i = 6;
 	while (map[i])
 	{
 		j = 0;

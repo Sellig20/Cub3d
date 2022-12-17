@@ -31,21 +31,23 @@ void	ft_map_split(char *join, t_data *x)
 	char	**split;
 
 	split = ft_split(join, '\n', x);
+	if (ft_map_coor_tab(split) == 1)
+		return ;
 	ft_map_space_change(split, x);
 	if (ft_parse_map_letter1(split, x) == 1)
 		return ;
-	if (ft_parse_map_letter2(split, x) == 1)
-		return ;
-	if (ft_parse_map_line1(split, x) == 1)
-		return ;
-	if (ft_parse_map_line2(split, x) == 1)
-		return ;
-	if (ft_parse_map_fl_lines(split, x) == 1)
-		return ;
-	if (ft_parse_map_first_case(split, x) == 1)
-		return ;
-	if (ft_parse_map_last_case(split, x) == 1)
-		return ;
+	// if (ft_parse_map_letter2(split, x) == 1)
+	// 	return ;
+	// if (ft_parse_map_line1(split, x) == 1)
+	// 	return ;
+	// if (ft_parse_map_line2(split, x) == 1)
+	// 	return ;
+	// if (ft_parse_map_fl_lines(split, x) == 1)
+	// 	return ;
+	// if (ft_parse_map_first_case(split, x) == 1)
+	// 	return ;
+	// if (ft_parse_map_last_case(split, x) == 1)
+	// 	return ;
 	ft_free_args(split);
 }
 

@@ -5,7 +5,7 @@ int	ft_parse_map_first_case(char **map, t_data *x)
 {
 	int	i;
 
-	i = 0;
+	i = 6;
 	(void)x;
 	while (map[i])
 	{
@@ -20,7 +20,7 @@ int	ft_parse_map_last_case(char **map, t_data *x)
 {
 	int	i;
 
-	i = 0;
+	i = 6;
 	(void)x;
 	while (map[i])
 	{
@@ -37,7 +37,7 @@ int	ft_parse_map_letter1(char **map, t_data *x)
 	int j;
 	(void)x;
 
-	i = 0;
+	i = 6;
 	while (map[i])
 	{
 		j = 0;
@@ -78,7 +78,7 @@ int	ft_parse_map_letter2(char **map, t_data *x)
 	int j;
 	(void)x;
 
-	i = 0;
+	i = 6;
 	while (map[i])
 	{
 		j = 0;

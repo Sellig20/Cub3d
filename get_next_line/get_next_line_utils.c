@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeannecolmou <jeannecolmou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:38:17 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/05 17:38:26 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:13:43 by jeannecolmo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,7 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 	final = malloc(sizeof(char) * (ft_strlen_gnl(s1)
 				+ (ft_strlen_gnl(s2)) + 1));
 	if (!final)
-	{
-		dprintf(2, "RETURN FINAL STRJOIN\n");
 		return (free_join(final, i), NULL);
-	}
 	while (s1 && (char)s1[i])
 	{
 		final[i] = (char)s1[i];
