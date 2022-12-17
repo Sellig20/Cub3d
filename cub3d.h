@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeannecolmou <jeannecolmou@student.42.f    +#+  +:+       +#+        */
+/*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:49:46 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/16 21:00:05 by jeannecolmo      ###   ########.fr       */
+/*   Updated: 2022/12/17 17:07:36 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ int		ft_parse_map_letter2(char **map, t_data *x);
 int		ft_open_file(char **argv, t_data *x);
 int		ft_empty_map(t_data *x);
 int		ft_open_map(char **argv, t_data *x);
-int	ft_map_coor_tab(char **map);
+int		ft_map_coor_tab(char **map, t_data *x);
 
 #endif

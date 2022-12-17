@@ -9,19 +9,23 @@ int	ft_parse_map_fl_lines(char **map, t_data *x)
 	i = 6;
 	j = 0;
 	(void)x;
-	while (map[0][j])
+	while (map[6][j])
 	{
-		if (!(map[0][j] == 'A' || map[0][j] == 'B' || map[0][j] == '1'))
+		if (!(map[6][j] == 'A' || map[6][j] == 'B' || map[6][j] == '1'))
+		{
+			dprintf(2, "==> %s\n", map[6]);
 			return (ft_putstr_fd("Error : No wall around the map first l\n", 2), 1);
+		}
 		j++;
 	}
 	j = 0;
-	while (map[x->max - 1][j])
-	{
-		if (!(map[x->max - 1][j] == 'A' || map[x->max - 1][j] == 'B' || map[x->max - 1][j] == '1'))
-			return (ft_putstr_fd("Error : No wall around the map last l\n", 2), 1);
-		j++;
-	}
+	dprintf(2, "-----------------------> %d\n", x->max);
+	// while (map[x->max - 1][j])
+	// {
+	// 	if (!(map[x->max - 1][j] == 'A' || map[x->max - 1][j] == 'B' || map[x->max - 1][j] == '1'))
+	// 		return (ft_putstr_fd("Error : No wall around the map last l\n", 2), 1);
+	// 	j++;
+	// }
 	return (0);
 }
 
@@ -69,7 +73,7 @@ int	ft_parse_map_line2(char **map, t_data *x)
 	int count;
 	int len;
 	int diff;
-	
+
 	len = 0;
 	diff = 0;
 	i = 6;

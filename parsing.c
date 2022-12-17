@@ -40,24 +40,28 @@ int	ft_check_coordinates(char **tab)
 	return (0);
 }
 
-int	ft_map_coor_tab(char **map)
+int	ft_map_coor_tab(char **map, t_data *x)
 {
-	char	**tab_coor;
+	//char	**tab_coor;
+	char	*join;
 	int		y;
 	int		o;
-	
+
+	(void)x;
 	y = 0;
 	o = 0;
-	tab_coor = malloc(sizeof(char) * 6);
+	//tab_coor = malloc(sizeof(char *) * 6 + 1);
+	join = NULL;
 	while (map[o] && o <= 5)
 	{
-		tab_coor[y] = map[o];
+		join = ft_strjoin(join, map[o]);
 		y++;
-		//dprintf(2, "coord ==> %s\n", map[o]);
+		dprintf(2, "coord ==> %s\n", map[o]);
 		o++;
 	}
-	if (ft_check_coordinates(tab_coor) == 1)
-		return (1);
+	//tab_coor = ft_split(join, '\n', x);
+	//if (ft_check_coordinates(tab_coor) == 1)
+	//	return (1);
 	return (0);
 }
 
@@ -77,14 +81,17 @@ void	ft_map_space_change(char **map, t_data *x)
 		while (map[o][f])
 		{
 			if (map[o][f] == ' ')
+			{
 				map[o][f] = 'A';
+				f++;
+			}
 			// if (map[o][f] == 'A')
 			// 	dprintf(2, "+++ : ESPACE\n");
 			// else
 			// 	dprintf(2, "+++ : %c\n", map[o][f]);
-			if ((f + 1 == len) && len < x->len)
+			else if ((f + 1 == len) && len < x->len)
 			{
-				f++;
+				// f++;
 				while (len < x->len - 1)
 				{
 					map[o][f] = 'B';
@@ -94,41 +101,10 @@ void	ft_map_space_change(char **map, t_data *x)
 					len++;
 				}
 			}
-			f++;
+			else
+				f++;
 		}
 		dprintf(2, "join ==> %s\n", map[o]);
 		o++;
 	}
 }
-
-// while (map[o])
-// 	{
-// 		// f = 0;
-// 		// len = ft_strlen(map[o]);
-// 		// while (map[o][f])
-// 		// {
-// 		// 	if (map[o][f] == ' ')
-// 		// 		map[o][f] = 'A';
-// 		// 	// if (map[o][f] == 'A')
-// 		// 	// 	dprintf(2, "+++ : ESPACE\n");
-// 		// 	// else
-// 		// 	// 	dprintf(2, "+++ : %c\n", map[o][f]);
-// 		// 	if ((f + 1 == len) && len < x->len)
-// 		// 	{
-// 		// 		f++;
-// 		// 		while (len < x->len - 1)
-// 		// 		{
-// 		// 			map[o][f] = 'B';
-// 		// 			f++;
-// 		// 			// if (map[o][f] == 'A')
-// 		// 			// 	dprintf(2, "+++ : ESPACE FIN\n");
-// 		// 			len++;
-// 		// 		}
-// 		// 	}
-// 		// 	f++;
-// 		// }
-// 		dprintf(2, "join ==> %s\n", map[o]);
-// 		o++;
-// 	}
-
-

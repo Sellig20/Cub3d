@@ -4,7 +4,7 @@
 // 	int p;
 // 	int y;
 // 	int fou;
-    
+
 // 	p = 0;
 //     fou = 0;
 // 	while (map[p])
@@ -59,3 +59,34 @@
 // 	dprintf(2, "count 1 = %d | count 2 = %d\n", count1, count2);
 // 	return (0);
 // }
+
+
+// while (map[o])
+// 	{
+// 		// f = 0;
+// 		// len = ft_strlen(map[o]);
+// 		// while (map[o][f])
+// 		// {
+// 		// 	if (map[o][f] == ' ')
+// 		// 		map[o][f] = 'A';
+// 		// 	// if (map[o][f] == 'A')
+// 		// 	// 	dprintf(2, "+++ : ESPACE\n");
+// 		// 	// else
+// 		// 	// 	dprintf(2, "+++ : %c\n", map[o][f]);
+// 		// 	if ((f + 1 == len) && len < x->len)
+// 		// 	{
+// 		// 		f++;
+// 		// 		while (len < x->len - 1)
+// 		// 		{
+// 		// 			map[o][f] = 'B';
+// 		// 			f++;
+// 		// 			// if (map[o][f] == 'A')
+// 		// 			// 	dprintf(2, "+++ : ESPACE FIN\n");
+// 		// 			len++;
+// 		// 		}
+// 		// 	}
+// 		// 	f++;
+// 		// }
+// 		dprintf(2, "join ==> %s\n", map[o]);
+// 		o++;
+// 	}
