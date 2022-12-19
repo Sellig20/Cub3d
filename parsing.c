@@ -124,11 +124,6 @@ int	ft_check_coordinates(char **map, t_data *x)
 		free(str);
 		o++;
 	}
-	// while (antoineminikiki <= 3)
-	// {
-	// 	dprintf(2, "#######################################>> %d\n", x->rgb[antoineminikiki]);
-	// 	antoineminikiki++;
-	// }
 	// if (!(tab[0][0] == 'N' && tab[0][1] == 'O'))
 	// 	return (ft_putstr_fd("Error : coordinates values are wrong\n", 2), 1);
 	// if (!(tab[1][0] == 'S' && tab[1][1] == 'O'))
@@ -144,10 +139,107 @@ int	ft_check_coordinates(char **map, t_data *x)
 	return (0);
 }
 
-int	ft_map_coor_tab(char **map, t_data *x)
+int		ft_fill_path_north(char **map, t_data *x)
+{
+	int	o;
+	int	f;
+	int y = 0;
+
+	o = 0;
+	f = 3;
+	while (map[0][f])
+	{
+		f++;
+	}
+	x->north = malloc(sizeof(char) * (f + 1));
+	f = 3;
+	while (map[0][f])
+	{
+		x->north[y] = map[0][f];
+		y++;
+		f++;
+	}
+	x->north[y] = '\0';
+	dprintf(2, "~~~~~~~~~~>>> %s\n", x->north);
+	return (0);
+}
+
+int		ft_fill_path_south(char **map, t_data *x)
+{
+	int	o;
+	int	f;
+	int y = 0;
+
+	o = 0;
+	f = 3;
+	while (map[1][f])
+	{
+		f++;
+	}
+	x->south = malloc(sizeof(char) * (f + 1));
+	f = 3;
+	while (map[1][f])
+	{
+		x->south[y] = map[1][f];
+		y++;
+		f++;
+	}
+	x->south[y] = '\0';
+	dprintf(2, "~~~~~~~~~~>>> %s\n", x->south);
+	return (0);
+}
+
+int		ft_fill_path_west(char **map, t_data *x)
+{
+	int	o;
+	int	f;
+	int y = 0;
+
+	o = 0;
+	f = 3;
+	while (map[2][f])
+	{
+		f++;
+	}
+	x->west = malloc(sizeof(char) * (f + 1));
+	f = 3;
+	while (map[2][f])
+	{
+		x->west[y] = map[2][f];
+		y++;
+		f++;
+	}
+	x->west[y] = '\0';
+	dprintf(2, "~~~~~~~~~~>>> %s\n", x->west);
+	return (0);
+}
+
+int		ft_fill_path_east(char **map, t_data *x)
+{
+	int	o;
+	int	f;
+	int y = 0;
+
+	o = 0;
+	f = 3;
+	while (map[3][f])
+		f++;
+	x->east = malloc(sizeof(char) * (f + 1));
+	f = 3;
+	while (map[3] && map[3][f])
+	{
+		x->east[y] = map[3][f];
+		y++;
+		f++;
+	}
+	x->east[y] = '\0';
+	dprintf(2, "~~~~~~~~~~>>> %s\n", x->east);
+	return (0);
+}
+
+int	ft_map_coor_tab(char **map, t_data *x) //MAP ENTIERE
 {
 	char	**tab_coor;
-	//char	*join;
 	int		y;
 	int		o;
 
@@ -155,17 +247,22 @@ int	ft_map_coor_tab(char **map, t_data *x)
 	y = 0;
 	o = 0;
 	tab_coor = malloc(sizeof(char *) * (6 + 1));
-	//join = NULL;
 	while (map[o] && o <= 5)
 	{
-		//join = ft_strjoin(join, map[o]);
+		dprintf(2, "coord ==> %s\n", map[o]);
 		tab_coor[y] = map[o];
 		y++;
-		dprintf(2, "coord ==> %s\n", map[o]);
 		o++;
 	}
-	//tab_coor = ft_split(join, '\n', x);
 	if (ft_check_coordinates(tab_coor, x) == 1)
+		return (1);
+	if (ft_fill_path_north(map, x) == 1)
+		return (1);
+	if (ft_fill_path_south(map, x) == 1)
+		return (1);
+	if (ft_fill_path_west(map, x) == 1)
+		return (1);
+	if (ft_fill_path_east(map, x) == 1)
 		return (1);
 	return (0);
 }

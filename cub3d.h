@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:49:46 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/19 20:19:50 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/19 21:28:12 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ struct	s_data
 	int	count;
 	int max;
 	int rgb[3];
+	char	*north;
+	char	*south;
+	char	*west;
+	char	*east;
 };
 
 typedef struct s_map		t_map;
@@ -61,6 +65,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strcmp(char *s1, char *s2);
 void	ft_bzero(void *s, size_t n);
 char	**ft_split(char const *s, char c, t_data *x);
+// char	**ft_split(char const *s, char c);
 void	ft_putstr_fd(char *str, int fd);
 int		ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
