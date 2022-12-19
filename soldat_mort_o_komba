@@ -34,6 +34,30 @@
 // 	}
 // }
 
+// f = 0;
+// 		i = 0;
+// 		v = 0;
+// 		while (!((map[o][f] >= 48 && map[o][f] <= 57)))
+// 			f++;
+// 		while (map[o][f])
+// 		{
+// 			if (map[o][f] != ',')
+// 				v += 1;
+// 			else
+// 			{
+// 				v = 0;
+// 			}
+// 			//dprintf(2, "---> %c\n", map[o][f]);
+// 			tmp = malloc(sizeof(char *) * v + 1);
+// 			tmp[i] = map[o][f];
+// 			i++;
+// 			// c = map[o][f];
+// 			// tmp = &c;
+// 			f++;
+// 			dprintf(2, "tmp = %s\n", tmp);
+// 		//dprintf(2, "sav =================== %d\n ", v);
+// 		}
+
 //int ft_check_b(char **map, int i, int j, int count1, int len)
 // {
 // 	//i++;
