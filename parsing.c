@@ -62,40 +62,73 @@ void ft_vouvou(char c, t_data *x)
 	dprintf(2, "+++ : %s\n", str);
 }
 
+int	ft_sizeofnumber(char **map, int o, int f)
+{
+	int	count;
+
+	count = 0;
+	while (map[o][f] >= 48 && map[o][f] <= 57 )
+	{
+		count++;
+		f++;
+	}
+	return (count);
+}
+
 int	ft_check_coordinates(char **map, t_data *x)
 {
 	int f;
 	int o;
 	char *str;
 	int i = 0;
+	int j = 0;
 
 	o = 4;
 	(void)x;
 	int count = 0;
-	while (map[o])
+	x->rgb[0] = 0;
+	x->rgb[1] = 0;
+	x->rgb[2] = 0;
+	while (map[o] && o < 6)
 	{
 		f = 0;
-		while (!((map[o][f] >= 48 && map[o][f] <= 57 && map[o][f] != ',')))
+		count = 0;
+		i = 0;
+		j = 0;
+		while ((!(map[o][f] >= 48 && map[o][f] <= 57 )))
 			f++;
-		while (map[o][f] >= 48 && map[o][f] <= 57 && map[o][f] != ',')
-		{
-			count++;
-			f++;
-		}
+		count = ft_sizeofnumber(map, o , f);
 		f = 0;
 		i = 0;
 		str = malloc(sizeof(char) * (count + 1));
-		while (!((map[o][f] >= 48 && map[o][f] <= 57 && map[o][f] != ',')))
+		ft_bzero(str, sizeof(str));
+		while ((!((map[o][f] >= 48 && map[o][f] <= 57 ))))
 			f++;
-		while (map[o][f] >= 48 && map[o][f] <= 57 && map[o][f] != ',')
+		while ((map[o][f] >= 48 && map[o][f] <= 57) || map[o][f] == ',')
 		{
 			str[i] = map[o][f];
 			i++;
 			f++;
-			dprintf(2, "-> %s\n", str);
+			if (i == count)
+			{
+				str[i] = '\0';
+				x->rgb[j] = ft_atoi(str);
+				j++;
+				f++;
+				i = 0;
+				count = ft_sizeofnumber(map, o , f);
+				free(str);
+				str = malloc(sizeof(char) * (count + 1));
+			}
 		}
+		free(str);
 		o++;
 	}
+	// while (antoineminikiki <= 3)
+	// {
+	// 	dprintf(2, "#######################################>> %d\n", x->rgb[antoineminikiki]);
+	// 	antoineminikiki++;
+	// }
 	// if (!(tab[0][0] == 'N' && tab[0][1] == 'O'))
 	// 	return (ft_putstr_fd("Error : coordinates values are wrong\n", 2), 1);
 	// if (!(tab[1][0] == 'S' && tab[1][1] == 'O'))
