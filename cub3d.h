@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:49:46 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/27 19:13:38 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:56:19 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ int		ft_open_file(char **argv, t_data *x);
 int		ft_empty_map(t_data *x);
 int		ft_open_map(char **argv, t_data *x);
 int		ft_map_coor_tab(char **map, t_data *x);
-void	ft_map_split2(t_data *x);
+int		ft_map_split2(t_data *x, char **map);
 //fill_paths_map.c
 int		ft_fill_path_north(char **map, t_data *x);
 int		ft_fill_path_south(char **map, t_data *x);

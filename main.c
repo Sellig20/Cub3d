@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:57:12 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/21 18:29:45 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:53:59 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	main(int argc, char **argv)
 	// 	p++;
 	// }
 
-	//ft_free_args(x.map);
+	ft_free_args(x.map);
 	// x.map[x.psx][x.psy] = '0';
 	// new_window(&x);
 	// init_game(&x); // INIT TOUTES LES VARIABLES NECESSAIRES AU JEU A 0 + DIRECTION
@@ -96,10 +96,10 @@ int	main(int argc, char **argv)
 	// mlx_hook(x.mlx_win, 3, 1L << 1, ft_key_release, &x);
 	// mlx_hook(x.mlx_win, 17, 0, close_all, &x);
 	// mlx_loop(x.mlx_ptr);
-	// free(x.north);
-	// free(x.south);
-	// free(x.west);
-	// free(x.east);
+	free(x.north);
+	free(x.south);
+	free(x.west);
+	free(x.east);
 	return (0);
 }
 

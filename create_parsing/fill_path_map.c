@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:45:41 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/27 19:10:12 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:44:50 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	ft_calculate_length(char **map, int f, int count, int nb)
 		f++;
 		count++;
 	}
+	return (count);
 }
 
 int	ft_fill_path_north(char **map, t_data *x)
