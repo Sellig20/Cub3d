@@ -6,13 +6,22 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:45:41 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/20 23:08:00 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:10:12 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int		ft_fill_path_north(char **map, t_data *x)
+int	ft_calculate_length(char **map, int f, int count, int nb)
+{
+	while (map[nb][f] != ' ')
+	{
+		f++;
+		count++;
+	}
+}
+
+int	ft_fill_path_north(char **map, t_data *x)
 {
 	int	o;
 	int	f;
@@ -23,11 +32,7 @@ int		ft_fill_path_north(char **map, t_data *x)
 	count = 0;
 	while (map[0][f] != '.')
 		f++;
-	while (map[0][f] != ' ')
-	{
-		f++;
-		count++;
-	}
+	count = ft_calculate_length(map, f, count, 0);
 	x->north = malloc(sizeof(char) * (count + 1));
 	count = 0;
 	f = 0;
@@ -43,7 +48,7 @@ int		ft_fill_path_north(char **map, t_data *x)
 	return (0);
 }
 
-int		ft_fill_path_south(char **map, t_data *x)
+int	ft_fill_path_south(char **map, t_data *x)
 {
 	int	o;
 	int	f;
@@ -54,11 +59,7 @@ int		ft_fill_path_south(char **map, t_data *x)
 	count = 0;
 	while (map[1][f] != '.')
 		f++;
-	while (map[1][f] != ' ')
-	{
-		f++;
-		count++;
-	}
+	count = ft_calculate_length(map, f, count, 1);
 	x->south = malloc(sizeof(char) * (count + 1));
 	count = 0;
 	f = 0;
@@ -74,7 +75,7 @@ int		ft_fill_path_south(char **map, t_data *x)
 	return (0);
 }
 
-int		ft_fill_path_west(char **map, t_data *x)
+int	ft_fill_path_west(char **map, t_data *x)
 {
 	int	o;
 	int	f;
@@ -85,11 +86,7 @@ int		ft_fill_path_west(char **map, t_data *x)
 	count = 0;
 	while (map[2][f] != '.')
 		f++;
-	while (map[2][f] != ' ')
-	{
-		f++;
-		count++;
-	}
+	count = ft_calculate_length(map, f, count, 2);
 	x->west = malloc(sizeof(char) * (count + 1));
 	count = 0;
 	f = 0;
@@ -105,7 +102,7 @@ int		ft_fill_path_west(char **map, t_data *x)
 	return (0);
 }
 
-int		ft_fill_path_east(char **map, t_data *x)
+int	ft_fill_path_east(char **map, t_data *x)
 {
 	int	o;
 	int	f;
@@ -116,11 +113,7 @@ int		ft_fill_path_east(char **map, t_data *x)
 	count = 0;
 	while (map[3][f] != '.')
 		f++;
-	while (map[3][f] != ' ')
-	{
-		f++;
-		count++;
-	}
+	count = ft_calculate_length(map, f, count, 3);
 	x->east = malloc(sizeof(char) * (count + 1));
 	count = 0;
 	f = 0;

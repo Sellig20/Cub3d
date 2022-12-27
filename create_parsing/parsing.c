@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:55:38 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/21 18:18:51 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:18:12 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int	ft_position_psx_psy(char **map, t_data *x)
 				x->pos = x->map[o][f];
 				x->pos_x = o + 0.5;
 				x->pos_y = f + 0.5;
-				// dprintf(2, "o ---> %d\n", o);
-				// dprintf(2, "f ---> %d\n", f);
 				x->psx = o;
 				x->psy = f;
 				return (0);

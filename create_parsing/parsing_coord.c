@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:11:42 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/21 19:03:22 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:30:59 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_sizeofnumber(char **map, int o, int f)
 	int	count;
 
 	count = 0;
-	while (map[o][f] >= 48 && map[o][f] <= 57 )
+	while (map[o][f] >= 48 && map[o][f] <= 57)
 	{
 		count++;
 		f++;
@@ -43,20 +43,14 @@ int	ft_sizeofnumber(char **map, int o, int f)
 	return (count);
 }
 
-// int	ft_fill_rgb(char **map, t_data *x)
-// {
-
-// }
-
 int	ft_tab_rgb(char **map, t_data *x)
 {
-	(void)x;
-	int f;
-	int o;
-	int j;
-	char *str;
-	dprintf(2, "COUCOU\n");
+	int		f;
+	int		o;
+	int		j;
+	char	*str;
 
+	(void)x;
 	o = 4;
 	x->countrgb = 0;
 	x->rgb[0] = 0;
@@ -68,12 +62,12 @@ int	ft_tab_rgb(char **map, t_data *x)
 		x->countrgb = 0;
 		x->index = 0;
 		j = 0;
-		while ((!(map[o][f] >= 48 && map[o][f] <= 57 )))
+		while ((!(map[o][f] >= 48 && map[o][f] <= 57)))
 			f++;
-		x->countrgb = ft_sizeofnumber(map, o , f);
+		x->countrgb = ft_sizeofnumber(map, o, f);
 		f = 0;
 		str = malloc(sizeof(char) * (x->countrgb + 1));
-		while ((!((map[o][f] >= 48 && map[o][f] <= 57 ))))
+		while ((!((map[o][f] >= 48 && map[o][f] <= 57))))
 			f++;
 		while ((map[o][f] >= 48 && map[o][f] <= 57) || map[o][f] == ',')
 		{
@@ -87,7 +81,7 @@ int	ft_tab_rgb(char **map, t_data *x)
 				j++;
 				f++;
 				x->index = 0;
-				x->countrgb = ft_sizeofnumber(map, o , f);
+				x->countrgb = ft_sizeofnumber(map, o, f);
 				free(str);
 				str = malloc(sizeof(char) * (x->countrgb + 1));
 			}
@@ -149,6 +143,5 @@ int	ft_tab_coord(char **map, t_data *x)
 	if (ft_organisation_coord(tab_coor, x) == 1)
 		return (1);
 	free(tab_coor);
-
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 14:52:30 by jecolmou          #+#    #+#              #
-#    Updated: 2022/12/21 18:18:10 by jecolmou         ###   ########.fr        #
+#    Updated: 2022/12/27 19:01:39 by jecolmou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS					=		main.c \
 							create_parsing/get_next_line_utils.c \
 							control_parsing/parsing_lines.c \
 							control_parsing/parsing_cases.c \
+							control_parsing/parsing_letters.c \
 							img.c \
 							init.c \
 							texture.c \

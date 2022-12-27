@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:55:29 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/21 20:21:25 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:13:42 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,33 +39,44 @@ int	ft_empty_map(t_data *x)
 
 void	ft_map_split(char *join, t_data *x)
 {
-	char **map;
+	char	**map;
+	int		i;
+
 	(void)x;
 	map = ft_split(join, '\n', x);
-	int i = 0;
-	//int	j = 0;
+	i = 0;
 	if (ft_tab_coord(map, x) == 1)
 		return ;
 	ft_fill_new_map(map, x);
 	i = 0;
-	// if (ft_parse_map_letter1(x->map, x) == 1)
-	// 	return ;
-	// if (ft_parse_map_letter2(x->map, x) == 1)
-	// 	return ;
-	// if (ft_parse_start_position(x->map, x) == 1)
-	// 	return ;
-	if (ft_parse_map_line1(x->map, x) == 1)
-	 	return ;
-	if (ft_parse_map_line2(x->map, x) == 1)
+	if (ft_parse_map_letter1(x->map, x) == 1)
 		return ;
-	// if (ft_parse_map_first_lines(x->map, x) == 1)
-	// 	return ;
-	// if (ft_parse_map_last_lines(x->map, x) == 1)
-	// 	return ;
-	// if (ft_parse_map_first_case(x->map, x) == 1)
-	// 	return ;
-	// if (ft_parse_map_last_case(x->map, x) == 1)
-	// 	return ;
+	if (ft_parse_map_letter2(x->map, x) == 1)
+		return ;
+	if (ft_parse_map_letter3(x->map, x) == 1)
+		return ;
+	if (ft_parse_start_position(x->map, x) == 1)
+		return ;
+	ft_map_split2(x);
+}
+
+void	ft_map_split2(t_data *x)
+{
+	char	**map;
+	int		i;
+
+	(void)x;
+	i = 0;
+	if (ft_parse_map_line(x->map, x) == 1)
+		return ;
+	if (ft_parse_map_first_lines(x->map, x) == 1)
+		return ;
+	if (ft_parse_map_last_lines(x->map, x) == 1)
+		return ;
+	if (ft_parse_map_first_case(x->map, x) == 1)
+		return ;
+	if (ft_parse_map_last_case(x->map, x) == 1)
+		return ;
 	ft_free_args(map);
 }
 
@@ -98,9 +109,7 @@ int	ft_open_map(char **argv, t_data *x)
 		str = get_next_line(x->file, 0);
 	}
 	ft_map_split(join, x);
-
 	get_next_line(x->file, 1);
 	free(join);
 	return (0);
 }
-

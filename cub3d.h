@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:49:46 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/12/21 19:40:41 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:13:38 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,27 +163,29 @@ void	ft_free_args(char **args);
 int		ft_check_argv(int argc, char **argv);
 void	ft_map_space_change(char **map, t_data *x);
 int		ft_count_line(char **argv, t_data *x);
-int	ft_position_psx_psy(char **map, t_data *x);
+int		ft_position_psx_psy(char **map, t_data *x);
 void	ft_fill_new_map(char **map, t_data *x);
 //pasing_coord.c
 int		ft_tab_coord(char **map, t_data *x);
 int		ft_check_coordinates(char **map, t_data *x);
 //parsing_lines
 int		ft_parse_map_first_lines(char **map, t_data *x);
-int		ft_parse_map_line2(char **map, t_data *x);
-int		ft_parse_map_line1(char **map, t_data *x);
-int	ft_parse_map_last_lines(char **map, t_data *x);
+int		ft_parse_map_line(char **map, t_data *x);
+int		ft_parse_map_last_lines(char **map, t_data *x);
 //parsing_cases.c
 int		ft_parse_map_first_case(char **map, t_data *x);
 int		ft_parse_map_last_case(char **map, t_data *x);
+int		ft_parse_start_position(char **map, t_data *x);
+//parsing_letters.c
 int		ft_parse_map_letter1(char **map, t_data *x);
 int		ft_parse_map_letter2(char **map, t_data *x);
-int		ft_parse_start_position(char **map, t_data *x);
+int		ft_parse_map_letter3(char **map, t_data *x);
 //open file
 int		ft_open_file(char **argv, t_data *x);
 int		ft_empty_map(t_data *x);
 int		ft_open_map(char **argv, t_data *x);
 int		ft_map_coor_tab(char **map, t_data *x);
+void	ft_map_split2(t_data *x);
 //fill_paths_map.c
 int		ft_fill_path_north(char **map, t_data *x);
 int		ft_fill_path_south(char **map, t_data *x);
